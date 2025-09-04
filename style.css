@@ -1,0 +1,78 @@
+body {
+    font-family: 'Helvetica Neue', 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 5px solid #44a;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    padding: 1rem;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+section {
+    background: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    border-bottom: 2px solid #44a;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* スライドショーのスタイル */
+.swiper-container {
+    width: 100%;
+    /* 高さはアスペクト比で管理するとレスポンシブで綺麗に見えます */
+    aspect-ratio: 16 / 9;
+    margin: 20px 0;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像がコンテナに合わせてトリミングされます */
+    border-radius: 5px;
+}
+
+/* YouTube動画のレスポンシブ対応 */
+#movie {
+    text-align: center;
+}
+
+iframe {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 0.9em;
+}
