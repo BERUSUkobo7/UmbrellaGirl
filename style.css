@@ -1,18 +1,52 @@
+/* ===== 基本スタイル ===== */
 body {
     font-family: 'Helvetica Neue', 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif;
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    /* 背景色をコンテンツの邪魔にならないよう少し調整 */
+    color: #f0f0f0;
+
+    /* --- 背景設定 --- */
+    background-color: #0c0c1e; /* 暗い夜空のような色 */
+    overflow-x: hidden; /* 横スクロールを防止 */
 }
 
+/* 雨粒を表現するための要素 */
+.rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 背景がクリックなどを邪魔しないようにする */
+    z-index: -1; /* コンテンツの背面に配置 */
+}
+
+.rain-drop {
+    position: absolute;
+    bottom: 100%;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(150, 200, 255, 0.6));
+    animation: fall linear infinite;
+}
+
+/* 雨が降るアニメーション */
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+/* ===== ヘッダー ===== */
 header {
-    background-color: #1a1a1a;
+    background-color: rgba(26, 26, 26, 0.8); /* 少し透明にする */
     color: #fff;
     padding: 2rem 0;
     text-align: center;
-    border-bottom: 5px solid #44a;
+    border-bottom: 5px solid #4a6dff;
 }
 
 header h1 {
@@ -20,6 +54,7 @@ header h1 {
     font-size: 2.5em;
 }
 
+/* ===== メインコンテンツ ===== */
 main {
     padding: 1rem;
     max-width: 900px;
@@ -27,15 +62,18 @@ main {
 }
 
 section {
-    background: #fff;
+    background: rgba(40, 40, 70, 0.85); /* 背景に合わせて半透明の濃い青紫色に */
+    backdrop-filter: blur(5px); /* ガラスのようなすりガラス効果 */
     margin-bottom: 2rem;
     padding: 2rem;
     border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 h2 {
-    border-bottom: 2px solid #44a;
+    color: #aaccff; /* 少し明るい青色 */
+    border-bottom: 2px solid #4a6dff;
     padding-bottom: 10px;
     margin-top: 0;
 }
@@ -44,10 +82,10 @@ ul {
     padding-left: 20px;
 }
 
-/* スライドショーのスタイル */
+/* ===== スライドショー ===== */
 .swiper-container {
+    position: relative; /* ページネーションの位置を正しくするための重要設定 */
     width: 100%;
-    /* 高さはアスペクト比で管理するとレスポンシブで綺麗に見えます */
     aspect-ratio: 16 / 9;
     margin: 20px 0;
 }
@@ -55,11 +93,20 @@ ul {
 .swiper-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 画像がコンテナに合わせてトリミングされます */
+    object-fit: cover;
     border-radius: 5px;
 }
 
-/* YouTube動画のレスポンシブ対応 */
+/* Swiperのページネーションと矢印の色を白くする */
+.swiper-pagination-bullet-active {
+    background: #fff !important;
+}
+.swiper-button-next, .swiper-button-prev {
+    color: #fff !important;
+}
+
+
+/* ===== 動画 ===== */
 #movie {
     text-align: center;
 }
@@ -69,10 +116,11 @@ iframe {
     border-radius: 5px;
 }
 
+/* ===== フッター ===== */
 footer {
     text-align: center;
     padding: 2rem 0;
-    background-color: #1a1a1a;
+    background-color: rgba(26, 26, 26, 0.8);
     color: #fff;
     font-size: 0.9em;
 }
