@@ -1,4 +1,4 @@
-// Swiperの初期化
+// ===== Swiperの初期化 =====
 const swiper = new Swiper('.swiper-container', {
     // スライドがループするように設定
     loop: true,
@@ -21,6 +21,7 @@ const swiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
 });
+
 
 // ===== 雨の背景を生成するスクリプト =====
 const rainContainer = document.getElementById('rain');
