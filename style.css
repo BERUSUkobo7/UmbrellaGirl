@@ -4,25 +4,21 @@ body {
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    /* 背景色をコンテンツの邪魔にならないよう少し調整 */
     color: #f0f0f0;
-
-    /* --- 背景設定 --- */
     background-color: #0c0c1e; /* 暗い夜空のような色 */
-    overflow-x: hidden; /* 横スクロールを防止 */
+    overflow-x: hidden;
 }
 
-/* 雨粒を表現するための要素 */
+/* ===== 雨の背景 ===== */
 .rain-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* 背景がクリックなどを邪魔しないようにする */
-    z-index: -1; /* コンテンツの背面に配置 */
+    pointer-events: none;
+    z-index: -1;
 }
-
 .rain-drop {
     position: absolute;
     bottom: 100%;
@@ -31,27 +27,56 @@ body {
     background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(150, 200, 255, 0.6));
     animation: fall linear infinite;
 }
-
-/* 雨が降るアニメーション */
 @keyframes fall {
-    to {
-        transform: translateY(100vh);
-    }
+    to { transform: translateY(100vh); }
 }
 
-
-/* ===== ヘッダー ===== */
-header {
-    background-color: rgba(26, 26, 26, 0.8); /* 少し透明にする */
-    color: #fff;
-    padding: 2rem 0;
+/* ===== ヒーローセクション ===== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) brightness(0.7);
+    transform: scale(1.1);
+    z-index: 1;
+}
+.hero-title {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    border-bottom: 5px solid #4a6dff;
+    opacity: 0;
+    animation: fadeInTitle 2s ease-out 0.5s forwards;
 }
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
+.hero-title img {
+    max-width: 80%;
+    height: auto;
+}
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* ===== メインコンテンツ ===== */
@@ -62,8 +87,8 @@ main {
 }
 
 section {
-    background: rgba(40, 40, 70, 0.85); /* 背景に合わせて半透明の濃い青紫色に */
-    backdrop-filter: blur(5px); /* ガラスのようなすりガラス効果 */
+    background: rgba(40, 40, 70, 0.85);
+    backdrop-filter: blur(5px);
     margin-bottom: 2rem;
     padding: 2rem;
     border-radius: 8px;
@@ -72,7 +97,7 @@ section {
 }
 
 h2 {
-    color: #aaccff; /* 少し明るい青色 */
+    color: #aaccff;
     border-bottom: 2px solid #4a6dff;
     padding-bottom: 10px;
     margin-top: 0;
@@ -84,20 +109,17 @@ ul {
 
 /* ===== スライドショー ===== */
 .swiper-container {
-    position: relative; /* ページネーションの位置を正しくするための重要設定 */
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
     margin: 20px 0;
 }
-
 .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
 }
-
-/* Swiperのページネーションと矢印の色を白くする */
 .swiper-pagination-bullet-active {
     background: #fff !important;
 }
@@ -105,12 +127,10 @@ ul {
     color: #fff !important;
 }
 
-
 /* ===== 動画 ===== */
 #movie {
     text-align: center;
 }
-
 iframe {
     max-width: 100%;
     border-radius: 5px;
