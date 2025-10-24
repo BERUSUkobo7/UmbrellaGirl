@@ -65,7 +65,7 @@ body {
  @media screen and (max-width: 600px) {
   .hero-background {
       /* ↓ スマホ専用の縦長画像（またはGIF）を指定 */
-      background-image: url('Images/logo_bg_mobile.gif'); 
+      transform: scale(0.5);
   }
 }
 .hero-title {
