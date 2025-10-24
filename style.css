@@ -1,3 +1,7 @@
+:root {
+  /* これでブラウザの自動調整がオフになります */
+  color-scheme: light dark; 
+}
 /* ===== 基本スタイル ===== */
 body {
     font-family: 'Helvetica Neue', 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif;
