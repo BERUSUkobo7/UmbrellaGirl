@@ -124,6 +124,7 @@ ul {
     width: 100%;
     aspect-ratio: 16 / 9;
     margin: 20px 0;
+    overflow: hidden;
 }
 .swiper-slide img {
     width: 100%;
