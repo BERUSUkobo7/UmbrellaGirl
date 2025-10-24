@@ -62,7 +62,7 @@ body {
     z-index: 1;
 }
 /* 画面幅が600px以下（スマホなど）の場合のスタイル */
-@media (max-width: 600px) {
+ @media screen and (max-width: 600px) {
   .hero-background {
       /* ↓ スマホ専用の縦長画像（またはGIF）を指定 */
       background-image: url('Images/logo-bg-mobile.gif'); 
